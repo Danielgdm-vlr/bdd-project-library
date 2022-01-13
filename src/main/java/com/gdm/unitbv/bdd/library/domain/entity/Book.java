@@ -1,5 +1,6 @@
 package com.gdm.unitbv.bdd.library.domain.entity;
 
+import com.gdm.unitbv.bdd.library.domain.util.Genre;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,15 +12,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @ToString
-public class Book implements Serializable {
+public class Book extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    @Getter
-    private Long id;
 
     @Column(name = "name")
     @NonNull
@@ -31,7 +26,7 @@ public class Book implements Serializable {
     @NonNull
     @Setter
     @Getter
-    private String genre;
+    private Genre genre;
 
 
     @Column(name = "author")

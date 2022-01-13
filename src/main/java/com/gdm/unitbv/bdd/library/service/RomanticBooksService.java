@@ -1,7 +1,7 @@
 package com.gdm.unitbv.bdd.library.service;
 
 import com.gdm.unitbv.bdd.library.domain.entity.Book;
-import com.gdm.unitbv.bdd.library.repository.RomanticBooksRepository;
+import com.gdm.unitbv.bdd.library.repository.romantic.RomanticBooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class RomanticBooksService {
+
     private final RomanticBooksRepository romanticBooksRepository;
 
     @Autowired
@@ -17,9 +18,9 @@ public class RomanticBooksService {
         this.romanticBooksRepository = romanticBooksRepository;
     }
 
-    public Iterable<Book> getAll(){
+    public List<Book> getAll(){
 
-        return romanticBooksRepository.findAll();
+        return (List<Book>) romanticBooksRepository.findAll();
     }
 
     public Book saveOrUpdate(Book book){

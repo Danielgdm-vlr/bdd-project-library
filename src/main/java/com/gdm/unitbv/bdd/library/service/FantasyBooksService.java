@@ -1,4 +1,30 @@
 package com.gdm.unitbv.bdd.library.service;
 
-public class FantasyBooksService {
+import com.gdm.unitbv.bdd.library.domain.entity.Book;
+import com.gdm.unitbv.bdd.library.repository.fantasy.FantasyBooksRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class FantasyBooksService{
+
+    private final FantasyBooksRepository fantasyBooksRepository;
+
+    @Autowired
+    public FantasyBooksService(FantasyBooksRepository fantasyBooksRepository){
+        
+        this.fantasyBooksRepository = fantasyBooksRepository;
+    }
+
+    public List<Book> getAll(){
+
+        return (List<Book>) fantasyBooksRepository.findAll();
+    }
+
+    public Book saveOrUpdate(Book book){
+
+        return fantasyBooksRepository.save(book);
+    }
 }

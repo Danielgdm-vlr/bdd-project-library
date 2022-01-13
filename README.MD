@@ -32,3 +32,6 @@ al doilea pas:
 creare java app cu spring
 configurare app: pachete, clase: config, model, rep, service, controller
 de pus aspecte teoretice: adnotari, lombok
+
+dependency mchange is for c3po to get rid of hibernate built-in connection pool warning
+
