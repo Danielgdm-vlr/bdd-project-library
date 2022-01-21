@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 public class RealistBooksService {
@@ -13,18 +15,25 @@ public class RealistBooksService {
     private final RealistBooksRepository realistBooksRepository;
 
     @Autowired
-    public RealistBooksService(RealistBooksRepository realistBooksRepository){
+    public RealistBooksService(RealistBooksRepository realistBooksRepository) {
 
         this.realistBooksRepository = realistBooksRepository;
     }
 
-    public List<Book> getAll(){
+    public List<Book> getAll() {
 
         return (List<Book>) realistBooksRepository.findAll();
     }
 
-    public Book saveOrUpdate(Book book){
+    public Book saveOrUpdate(Book book) {
 
         return realistBooksRepository.save(book);
+    }
+
+    public Book getById(int id) {
+
+        AtomicReference<Book> bookAtomicReference = new AtomicReference<>();
+        realistBooksRepository.findById(id).ifPresent(bookAtomicReference::set);
+        return bookAtomicReference.get();
     }
 }

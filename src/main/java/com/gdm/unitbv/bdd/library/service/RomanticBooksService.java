@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 public class RomanticBooksService {
@@ -26,5 +28,12 @@ public class RomanticBooksService {
     public Book saveOrUpdate(Book book){
 
         return romanticBooksRepository.save(book);
+    }
+
+    public Book getById(int id){
+
+        AtomicReference<Book> bookAtomicReference = new AtomicReference<>();
+        romanticBooksRepository.findById(id).ifPresent(bookAtomicReference::set);
+        return bookAtomicReference.get();
     }
 }

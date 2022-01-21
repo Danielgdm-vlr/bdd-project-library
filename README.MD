@@ -35,3 +35,8 @@ de pus aspecte teoretice: adnotari, lombok
 
 dependency mchange is for c3po to get rid of hibernate built-in connection pool warning
 
+sa nu uit sa precizez faza cu automatic restart
+
+si apoi de vorbit si de partea de front cu js
+
+
