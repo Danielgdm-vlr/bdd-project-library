@@ -1,35 +1,23 @@
 package com.gdm.unitbv.bdd.library.controller.v1;
 
-import com.gdm.unitbv.bdd.library.domain.entity.Book;
-import com.gdm.unitbv.bdd.library.service.BookService;
-import com.gdm.unitbv.bdd.library.service.FantasyBooksService;
-import com.gdm.unitbv.bdd.library.service.RealistBooksService;
-import com.gdm.unitbv.bdd.library.service.RomanticBooksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.gdm.unitbv.bdd.library.domain.entity.Book;
+import com.gdm.unitbv.bdd.library.service.BookService;
+
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 @RestController
 @RequestMapping("api/v1/book")
 public class BookController {
 
     private final BookService bookService;
-    private final FantasyBooksService fantasyBooksService;
-    private final RealistBooksService realistBooksService;
-    private final RomanticBooksService romanticBooksService;
 
     @Autowired
-    public BookController(BookService bookService,
-                          FantasyBooksService fantasyBooksService,
-                          RealistBooksService realistBooksService,
-                          RomanticBooksService romanticBooksService){
+    public BookController(BookService bookService){
 
         this.bookService = bookService;
-        this.fantasyBooksService = fantasyBooksService;
-        this.realistBooksService = realistBooksService;
-        this.romanticBooksService = romanticBooksService;
     }
 
     @GetMapping

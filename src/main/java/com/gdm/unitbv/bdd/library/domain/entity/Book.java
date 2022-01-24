@@ -1,16 +1,15 @@
 package com.gdm.unitbv.bdd.library.domain.entity;
 
-import com.gdm.unitbv.bdd.library.domain.util.Genre;
-import lombok.*;
-import org.hibernate.Hibernate;
+import java.io.Serializable;
+import java.util.Objects;
 
+import org.hibernate.Hibernate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-import java.io.File;
-import java.io.Serializable;
-import java.util.Objects;
+import lombok.*;
+
+import com.gdm.unitbv.bdd.library.domain.util.Genre;
 
 @Entity
 @Table(name = "book")

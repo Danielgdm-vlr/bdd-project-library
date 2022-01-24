@@ -1,12 +1,12 @@
 package com.gdm.unitbv.bdd.library.domain.entity;
 
-import lombok.Getter;
-import lombok.ToString;
-import org.hibernate.Hibernate;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+
+import org.hibernate.Hibernate;
+import javax.persistence.*;
+import lombok.Getter;
+import lombok.ToString;
 
 @MappedSuperclass
 @ToString

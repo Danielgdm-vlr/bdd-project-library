@@ -11,11 +11,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class LibraryApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(LibraryApplication.class, args);
     }
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
+
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(@NonNull CorsRegistry registry) {
