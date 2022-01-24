@@ -29,7 +29,7 @@ public class BDDRomanticBooks {
     @Bean(name = "dataSourceBDDRomanticBooks")
     public DataSource dataSource(){
 
-        return GenericConfig.getDataSource("jdbc:postgresql://127.0.0.1:5432/bdd-romantic-books" +
+        return GenericConfig.getDataSource("jdbc:postgresql://127.0.0.1:5432/--PUT YOUR DATABASE NAME HERE--" +
                 "?createDatabaseIfNotExist=true");
     }
 
@@ -41,7 +41,7 @@ public class BDDRomanticBooks {
         return entityManagerFactoryBuilder.dataSource(dataSourceFantasyBooks)
                 .properties(GenericConfig.getProperties())
                 .packages("com.gdm.unitbv.bdd.library.domain.entity")
-                .persistenceUnit("bdd-romantic-books")
+                .persistenceUnit("--PUT YOUR DATABASE NAME HERE--")
                 .build();
     }
 

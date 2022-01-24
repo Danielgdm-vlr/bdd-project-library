@@ -18,8 +18,8 @@ public class GenericConfig {
             exception.printStackTrace();
         }
         dataSource.setJdbcUrl(url);
-        dataSource.setUser("postgres");
-        dataSource.setPassword("18062000gdm");
+        dataSource.setUser("—PUT YOUR CREDENTIALS HERE—");
+        dataSource.setPassword("—PUT YOUR CREDENTIALS HERE—");
 
         return dataSource;
     }
